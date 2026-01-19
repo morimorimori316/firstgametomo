@@ -21,7 +21,18 @@ public class Question1 : MonoBehaviour
                     
                 cube = Instantiate(cube, new Vector3(a*2, 0, b*2), Quaternion.identity);
                 cube.GetComponent<MeshRenderer>().material.color = yellow;
-
+                if (a >= 5)
+                {
+                    cube.GetComponent<MeshRenderer>().material.color = Color.blue;
+                }
+                if (b >= 5)
+                {
+                    cube.GetComponent<MeshRenderer>().material.color = Color.green;
+                }
+                if (a >= 5 && b >= 5)
+                {
+                    cube.GetComponent<MeshRenderer>().material.color += Color.blue;
+                }
             }
 
             
