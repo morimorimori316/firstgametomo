@@ -3,7 +3,7 @@ using UnityEngine;
 public class Question1 : MonoBehaviour
 {
     public GameObject cube;
-
+    public GameObject cube2;
     private int a, b;
     Color yellow = Color.yellow;
     
@@ -19,19 +19,19 @@ public class Question1 : MonoBehaviour
             for (b = 0; b < 9; b++)
             {
                     
-                cube = Instantiate(cube, new Vector3(a*2, 0, b*2), Quaternion.identity);
-                cube.GetComponent<MeshRenderer>().material.color = yellow;
+                cube2 = Instantiate(cube, new Vector3(a*2, 0, b*2), Quaternion.identity);
+                cube2.GetComponent<MeshRenderer>().material.color = yellow;
                 if (a >= 5)
                 {
-                    cube.GetComponent<MeshRenderer>().material.color = Color.blue;
+                    cube2.GetComponent<MeshRenderer>().material.color = Color.blue;
                 }
                 if (b >= 5)
                 {
-                    cube.GetComponent<MeshRenderer>().material.color = Color.green;
+                    cube2.GetComponent<MeshRenderer>().material.color = Color.green;
                 }
                 if (a >= 5 && b >= 5)
                 {
-                    cube.GetComponent<MeshRenderer>().material.color += Color.blue;
+                    cube2.GetComponent<MeshRenderer>().material.color += Color.blue;
                 }
             }
 
