@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class Question1 : MonoBehaviour
 {
+    public AudioSource audioSource;
     public GameObject cube;
     public GameObject cube2;
-    private int a, b;
+    private int a, b,c = 0;
     Color yellow = Color.yellow;
+    public GameObject[] allCubes;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created                                   
     void Start()
     {
 
-
+        allCubes = new GameObject[81];
         
 
         for (a = 0; a < 9; a++)
@@ -20,6 +22,7 @@ public class Question1 : MonoBehaviour
             {
                     
                 cube2 = Instantiate(cube, new Vector3(a*2, 0, b*2), Quaternion.identity);
+                allCubes[c] = cube2;
                 cube2.GetComponent<MeshRenderer>().material.color = yellow;
                 if (a >= 5)
                 {
@@ -33,6 +36,8 @@ public class Question1 : MonoBehaviour
                 {
                     cube2.GetComponent<MeshRenderer>().material.color += Color.blue;
                 }
+
+                c++;
             }
 
             
@@ -48,5 +53,18 @@ public class Question1 : MonoBehaviour
     {
         
         
+    }
+
+    public void AddGravity()
+    {
+        for (c = 0; c < 81; c++)
+        {
+            allCubes[c].GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
+
+    public void Audio()
+    {
+        audioSource.Play();
     }
 }
