@@ -399,6 +399,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  wave1:
+  - {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  - {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  - {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  wave2:
+  - {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  - {fileID: 3119884290093270752, guid: 196bc494e2ee1c548b06889218359826, type: 3}
+  - {fileID: 7570193613291331214, guid: 79a9a3ab62f648d45a2fc5cb76257ae2, type: 3}
+  wave3:
+  - {fileID: 3841904337325815282, guid: d03bcfcc9af670c4cb3acc937d5aa695, type: 3}
+  - {fileID: 3119884290093270752, guid: 196bc494e2ee1c548b06889218359826, type: 3}
+  - {fileID: 3119884290093270752, guid: 196bc494e2ee1c548b06889218359826, type: 3}
+  isFighting: 0
+  puttingTime: 3
 --- !u!4 &241837211
 Transform:
   m_ObjectHideFlags: 0
