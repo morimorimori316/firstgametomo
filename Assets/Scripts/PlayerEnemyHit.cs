@@ -16,9 +16,10 @@ public class PlayerEnemyHit : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name.IndexOf("Sphere") != -1)
+        
+        if (collision.gameObject.name.IndexOf("Enemy") != -1)
         {
             
             hp -= 1;

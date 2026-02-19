@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BulletHit : MonoBehaviour
 {
+    
     public int hp = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,17 +16,21 @@ public class BulletHit : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name.IndexOf("Bullet") != -1)
         {
             hp -= 1;
             if (hp <= 0)
             {
+                GameObject.FindObjectOfType<Spawner>().takeDownCount++;
                 Destroy(gameObject);
+                
+                
             }
             
             
         }
     }
+    
 }
