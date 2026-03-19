@@ -89,7 +89,16 @@ public class Spawner : MonoBehaviour
                 case 2 :
                     for (i = 0; i < wave2.Count; i++)
                     {
-                        Instantiate(wave2[i], new Vector3(Random.Range(-5f, 5f), 0, 7f), Quaternion.identity);
+                        if (i <= 2)
+                        {
+                            Instantiate(wave2[i], new Vector3(Random.Range(-5f, 5f), 0, 7f), Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(wave2[i], new Vector3(Random.Range(-8f, 8f), 0, Random.Range(-5f, 5f)),Quaternion.identity);
+                        }
+                        
+                            
                 
                     }
 

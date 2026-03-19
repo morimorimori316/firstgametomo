@@ -1,15 +1,18 @@
 using UnityEngine;
-
+using System.Collections;
 public class Enemy4Controler : MonoBehaviour
 {
     public bool isShooting = false;
 
     public GameObject cube;
+    public GameObject bullet2;
     public LineRenderer line;
+    public GameObject bullet;
     float time = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        cube = GameObject.FindObjectOfType<PlayerEnemyHit>().gameObject;
         line.positionCount = 2;
         //line = GetComponent<LineRenderer>();
     }
@@ -21,7 +24,8 @@ public class Enemy4Controler : MonoBehaviour
         
         if (isShooting)
         {
-            
+            isShooting = false;
+            StartCoroutine(WaitAndShoot());
         }
         else
         {
@@ -37,5 +41,15 @@ public class Enemy4Controler : MonoBehaviour
             }
 
         }
+    }
+
+    private IEnumerator WaitAndShoot()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        bullet = Instantiate(bullet2, transform.position, Quaternion.identity);
+        bullet.transform.rotation = transform.rotation;
+        
+
     }
 }
