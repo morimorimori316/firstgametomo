@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class PlayerEnemyHit : MonoBehaviour
 {
     public int hp = 3;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,7 @@ public class PlayerEnemyHit : MonoBehaviour
             
             hp -= 1;
             Destroy(collision.gameObject);
+            GameObject.FindObjectOfType<Spawner>().takeDownCount++;
             if (hp <= 0)
             {
                 Debug.Log("Game Over!");

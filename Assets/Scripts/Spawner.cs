@@ -106,7 +106,18 @@ public class Spawner : MonoBehaviour
                 case 3:
                     for (i = 0; i < wave3.Count; i++)
                     {
-                        Instantiate(wave3[i], new Vector3(Random.Range(-5f, 5f), 0, 7f), Quaternion.identity);
+                        if (i <= 2)
+                        {
+                            Instantiate(wave3[i], new Vector3(Random.Range(-5f, 5f), 0, 7f), Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(wave3[i], new Vector3(Random.Range(-8f, 8f), 0, Random.Range(-5f, 5f)),
+                                Quaternion.identity);
+                        }
+                        
+                        
+                        
                 
                     }
 
