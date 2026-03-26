@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletHit : MonoBehaviour
 {
     
-    public int hp = 3;
+    public float hp = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,13 +20,15 @@ public class BulletHit : MonoBehaviour
     {
         if (collision.gameObject.name.IndexOf("Bullet") != -1)
         {
-            hp -= 1;
+            hp -= 1 *FindObjectOfType<PlayerManager>().attack;
             if (hp <= 0)
             {
                 GameObject.FindObjectOfType<Spawner>().takeDownCount++;
+                GameObject.FindObjectOfType<PlayerManager>().TakeDown();
                 Destroy(gameObject);
                 
-                
+
+
             }
             
             
