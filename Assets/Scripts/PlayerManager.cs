@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         levelText.text = level.ToString();
+        // levelText.text = level + " Lv";
     }
 
     public void TakeDown()

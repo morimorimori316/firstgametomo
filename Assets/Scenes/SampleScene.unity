@@ -495,7 +495,7 @@ MonoBehaviour:
   takeDownCount: 0
   attack: 1
   experience: {fileID: 301806213}
-  experienceBar: {fileID: 0}
+  levelText: {fileID: 1691907088}
 --- !u!1 &241837209
 GameObject:
   m_ObjectHideFlags: 0
