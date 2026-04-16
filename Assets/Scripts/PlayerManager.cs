@@ -1,11 +1,13 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
-    public int level = 1;
-    public int takeDownCount = 0;
+    public float level = 1;
+    public float takeDownCount = 0;
     public float attack = 1;
-   
+    public Image experience;
+    
+    float a = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +17,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDown()
     {
         takeDownCount++;
+        ExperienceBar();
         if (takeDownCount == level)
         {
             level++;
@@ -24,6 +27,14 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("Levelup");
         }
         
+    }
+    public void ExperienceBar()
+    {
+        experience.fillAmount = takeDownCount / level;
+        if(experience.fillAmount == 1)
+        {
+            experience.fillAmount = 0;
+        }
     }
     
 }
