@@ -19,7 +19,7 @@ public class Shot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             bullet1 = Instantiate(bullet, transform.position, Quaternion.identity);
-            bullet1.transform.localEulerAngles = new Vector3(90f,0, 0);
+            // bullet1.transform.localEulerAngles = new Vector3(90f,0, 0);
             au.PlayOneShot(clickSound);
         }
     }
