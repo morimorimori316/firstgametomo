@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class  BallHit : MonoBehaviour
 {
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +19,9 @@ public class  BallHit : MonoBehaviour
     {
         if (collision.gameObject.name.IndexOf("Ball") != -1)
         {
+            
             Destroy(gameObject);
+            
         }
     }
 }
