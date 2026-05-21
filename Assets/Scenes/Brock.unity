@@ -586,6 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f7f56b3353ed847a3140415c985a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokenBrocksCountText: {fileID: 241471923}
+  brokenBrocksCount: 0
 --- !u!1 &587422589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841cd6d75eba6d945b0e5b8491e66a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Brock: {fileID: 4337984450547463308, guid: dd5f42a69c9dd2a4abee1f9f1cffe31c, type: 3}
+  brock: {fileID: 4337984450547463308, guid: dd5f42a69c9dd2a4abee1f9f1cffe31c, type: 3}
+  brock2: {fileID: 0}
 --- !u!1 &1875632272
 GameObject:
   m_ObjectHideFlags: 0
