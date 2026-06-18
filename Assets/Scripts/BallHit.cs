@@ -1,9 +1,14 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class  BallHit : MonoBehaviour
 {
 
     public int brockHp;
+    private bool isRed;
+    private int randomItem;
+    public List<GameObject> items = new List<GameObject>();
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +23,11 @@ public class  BallHit : MonoBehaviour
             case 3 :
                 GetComponent<MeshRenderer>().material.color = Color.red;
                 break;
+        }
+
+        if (brockHp == 3)
+        {
+            isRed = true;
         }
     }
 
@@ -46,6 +56,12 @@ public class  BallHit : MonoBehaviour
             if (brockHp <= 0)
             {
                 FindObjectOfType<BrokenBrocksCount>().brokenBrocksCount++;
+
+                if (isRed)
+                {
+                    randomItem = Random.Range(0, items.Count);
+                    Instantiate(items[randomItem], transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
             

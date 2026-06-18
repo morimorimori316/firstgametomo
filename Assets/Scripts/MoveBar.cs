@@ -34,4 +34,13 @@ public class MoveBar : MonoBehaviour
         
 
     }
+
+    
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.name.IndexOf("item") != -1)
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
