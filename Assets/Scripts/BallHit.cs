@@ -7,6 +7,7 @@ public class  BallHit : MonoBehaviour
     private bool isRed;
     private int randomItem;
     public List<GameObject> items = new List<GameObject>();
+    public int atackPoint = 0;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,7 +42,10 @@ public class  BallHit : MonoBehaviour
     {
         if (collision.gameObject.name.IndexOf("Ball") != -1)
         {
-            brockHp -= 1;
+            atackPoint = FindObjectOfType<MoveBar>().atackPoint;
+            brockHp -= 1 + atackPoint;
+            
+            
             switch (brockHp)
             {
                 case 1:
@@ -60,7 +64,7 @@ public class  BallHit : MonoBehaviour
                 if (isRed)
                 {
                     randomItem = Random.Range(0, items.Count);
-                    Instantiate(items[randomItem], transform.position, Quaternion.identity);
+                    Instantiate(items[1], transform.position, Quaternion.identity);
                 }
                 Destroy(gameObject);
             }

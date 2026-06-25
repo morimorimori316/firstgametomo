@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 7, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.09, y: 0.545, z: 0.545}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,4 +126,4 @@ MonoBehaviour:
   - {fileID: 7926920424249062878, guid: 8f84ae0b7ca242547a309d453bc07804, type: 3}
   - {fileID: 3262009990682578691, guid: ae7c6154446cd684bae50daa17734cd0, type: 3}
   - {fileID: 1592139341223137307, guid: 0396b97331fcde74bbed0825b9485c3a, type: 3}
-  item1: {fileID: 0}
+  atackPoint: 0
