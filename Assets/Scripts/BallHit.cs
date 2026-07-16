@@ -64,7 +64,7 @@ public class  BallHit : MonoBehaviour
                 if (isRed)
                 {
                     randomItem = Random.Range(0, items.Count);
-                    Instantiate(items[1], transform.position, Quaternion.identity);
+                    Instantiate(items[randomItem], transform.position, Quaternion.identity);
                 }
                 Destroy(gameObject);
             }

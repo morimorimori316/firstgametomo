@@ -7,7 +7,7 @@ public class MoveBar : MonoBehaviour
     public float speed = 0.6f;
     private float time;
     private Rigidbody rb;
-    private Coroutine c;
+    private Coroutine c1,c2;
     public int atackPoint;
 
     private bool isEffectTime1 = false;
@@ -54,14 +54,14 @@ public class MoveBar : MonoBehaviour
                 
                 gameObject.transform.localScale = new Vector3(transform.localScale.x*2f,transform.localScale.y,transform.localScale.z) ;
                 isEffectTime1 = true;
-                c = StartCoroutine(EffectTime1());
+                c1 = StartCoroutine(EffectTime1());
                 
             }
             else
             {
-                StopCoroutine(c);
-                c = null;
-                c = StartCoroutine(EffectTime1());
+                StopCoroutine(c1);
+                c1 = null;
+                c1 = StartCoroutine(EffectTime1());
                 
             }
 
@@ -69,9 +69,20 @@ public class MoveBar : MonoBehaviour
             
         }else if (collision.gameObject.name.IndexOf("item2") != -1)
         {
-            Destroy(collision.gameObject);
-            atackPoint++;
-            StartCoroutine(EffectTime2());
+            if(isEffectTime2!= true)
+            {
+                Destroy(collision.gameObject);
+                atackPoint++;
+                c2 = StartCoroutine(EffectTime2());
+            }
+            else
+            {
+                StopCoroutine(c2);
+                c2 = null;
+                c2 = StartCoroutine(EffectTime2());
+            }
+            
+            
         }
     }
     
