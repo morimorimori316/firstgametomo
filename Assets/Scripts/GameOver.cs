@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class GameOver : MonoBehaviour
+
 {
+    public int  downBallCount = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +21,13 @@ public class GameOver : MonoBehaviour
     {
         if (collision.gameObject.name.IndexOf("Ball") != -1)
         {
-            SceneManager.LoadScene("GameOver");
+            Destroy(collision.gameObject);
+            downBallCount++;
+            if (downBallCount == FindObjectOfType<MoveBar>().ballCount)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
+            
         }
     }
 }

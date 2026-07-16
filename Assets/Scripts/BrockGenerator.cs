@@ -25,6 +25,7 @@ public class BrockGenerator : MonoBehaviour
                         
                     case 2:
                         FindObjectOfType<BallHit>().brockHp = 3;
+                        brock2.name = "red";
                         break;
                 }
             }
