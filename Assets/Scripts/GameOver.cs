@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
         {
             Destroy(collision.gameObject);
             downBallCount++;
+            Debug.Log(downBallCount);
             if (downBallCount == FindObjectOfType<MoveBar>().ballCount)
             {
                 SceneManager.LoadScene("GameOver");
