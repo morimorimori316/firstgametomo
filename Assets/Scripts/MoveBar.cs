@@ -16,7 +16,7 @@ public class MoveBar : MonoBehaviour
     public int ballCount = 1;
     private GameObject ball2;
     private float ballSpeed = 5f;
-
+    GameObject[] addBall;
     private bool isEffectTime2 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -91,10 +91,13 @@ public class MoveBar : MonoBehaviour
         }else if (collision.gameObject.name.IndexOf("item3") != -1)
         {
             Destroy(collision.gameObject);
-            ball2 =  Instantiate(ball3, ball.transform.position, Quaternion.identity);
+
+            addBall = GameObject.FindGameObjectsWithTag("ball");
+            
+            ball2 =  Instantiate(ball3, addBall[0].transform.position, Quaternion.identity);
             //ball2.GetComponent<Rigidbody>().linearVelocity = new Vector3(ballSpeed, ballSpeed, 0f);
             ball2.GetComponent<Rigidbody>().AddForce(new Vector3(speed,speed,0f));
-            ball2 = Instantiate(ball3, ball.transform.position, Quaternion.identity);
+            ball2 = Instantiate(ball3, addBall[0].transform.position, Quaternion.identity);
             //ball2.GetComponent<Rigidbody>().linearVelocity = new Vector3(-ballSpeed, -ballSpeed, 0f);
             ball2.GetComponent<Rigidbody>().AddForce(new Vector3(-speed,speed,0f));
             ballCount += 2;
