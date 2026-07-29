@@ -3,8 +3,12 @@ using UnityEngine;
 public class BallHitBar : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    float ballHit = 1f;
-    
+    public float ballHit = 1f;
+    Rigidbody rb;
+    Vector3 currentVelocity;
+    float ballSpeed;
+    Vector3 newDirection;
+
     void Start()
     {
         
@@ -18,6 +22,17 @@ public class BallHitBar : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(ballHit,0f,0f);
+        rb = collision.gameObject.GetComponent<Rigidbody>();
+        if(collision.gameObject.name.IndexOf("Ball") != -1)
+        {
+            //gameObject.GetComponent<Rigidbody>().AddForce(ballHit, 0f, 0f);
+            currentVelocity = rb.linearVelocity;
+            ballSpeed = currentVelocity.magnitude;
+            newDirection = currentVelocity.normalized;
+            newDirection.y = 1f;
+            newDirection.x += ballHit;
+            rb.linearVelocity = newDirection.normalized*ballSpeed;
+        }
+        
     }
 }
