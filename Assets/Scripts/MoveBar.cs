@@ -13,7 +13,7 @@ public class MoveBar : MonoBehaviour
     public GameObject ball;
     private bool isEffectTime1 = false;
     private int i;
-    public int ballCount = 1;
+    public static int ballCount = 1;
     private GameObject ball2;
     private float ballSpeed = 5f;
     GameObject[] addBall;
