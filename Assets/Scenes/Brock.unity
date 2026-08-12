@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 316007203}
   - component: {fileID: 316007202}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,6 @@ MonoBehaviour:
   atackPoint: 0
   ball3: {fileID: 700791595412127799, guid: 2258545d2b28e854b92e161bc613af09, type: 3}
   ball: {fileID: 1914675696}
-  ballCount: 1
 --- !u!54 &473745881
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -544,7 +543,7 @@ GameObject:
   - component: {fileID: 491438427}
   - component: {fileID: 491438426}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -930,7 +929,6 @@ MonoBehaviour:
   atackPoint: 0
   ball3: {fileID: 700791595412127799, guid: 2258545d2b28e854b92e161bc613af09, type: 3}
   ball: {fileID: 1914675696}
-  ballCount: 1
 --- !u!54 &598052311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1392,7 +1390,6 @@ MonoBehaviour:
   atackPoint: 0
   ball3: {fileID: 700791595412127799, guid: 2258545d2b28e854b92e161bc613af09, type: 3}
   ball: {fileID: 1914675696}
-  ballCount: 1
 --- !u!54 &1579508619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1676,6 +1673,7 @@ GameObject:
   - component: {fileID: 1914675699}
   - component: {fileID: 1914675698}
   - component: {fileID: 1914675697}
+  - component: {fileID: 1914675703}
   m_Layer: 6
   m_Name: Ball
   m_TagString: ball
@@ -1812,6 +1810,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914675703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914675696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188fb902535387b46b98a8bcbfbad7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHittingWall: 0
+  hitWallCount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

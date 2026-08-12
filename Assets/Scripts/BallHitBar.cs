@@ -27,7 +27,7 @@ public class BallHitBar : MonoBehaviour
         {
             //gameObject.GetComponent<Rigidbody>().AddForce(ballHit, 0f, 0f);
             currentVelocity = rb.linearVelocity;
-            ballSpeed = currentVelocity.magnitude;
+            ballSpeed = 5f;
             newDirection = currentVelocity.normalized;
             newDirection.y = 1f;
             newDirection.x += ballHit;
