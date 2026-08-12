@@ -8,11 +8,16 @@ public class  BallHit : MonoBehaviour
     private int randomItem;
     public List<GameObject> items = new List<GameObject>();
     public int atackPoint = 0;
+    //public AudioSource au;
+    //public AudioClip ac;
+    public GameObject audioBox;
+    GameObject au2;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //au = GetComponent<AudioSource>();
         switch (brockHp)
         {
             case 1:
@@ -42,6 +47,9 @@ public class  BallHit : MonoBehaviour
     {
         if (collision.gameObject.name.IndexOf("Ball") != -1)
         {
+            au2 = Instantiate(audioBox);
+            Destroy(au2, 1f);
+            //au.PlayOneShot(ac);
             atackPoint = FindObjectOfType<MoveBar>().atackPoint;
             brockHp -= 1 + atackPoint;
             
@@ -64,11 +72,12 @@ public class  BallHit : MonoBehaviour
                 if (isRed)
                 {
                     randomItem = Random.Range(0, items.Count);
-                    Instantiate(items[2], transform.position, Quaternion.identity);
+                    Instantiate(items[randomItem], transform.position, Quaternion.identity);
                 }
                 Destroy(gameObject);
             }
             
         }
+        
     }
 }

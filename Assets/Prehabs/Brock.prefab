@@ -127,3 +127,4 @@ MonoBehaviour:
   - {fileID: 3262009990682578691, guid: ae7c6154446cd684bae50daa17734cd0, type: 3}
   - {fileID: 1592139341223137307, guid: 0396b97331fcde74bbed0825b9485c3a, type: 3}
   atackPoint: 0
+  audioBox: {fileID: 2854969379313332974, guid: a6fa8576cac0ce14f884939c06e6a9f9, type: 3}
