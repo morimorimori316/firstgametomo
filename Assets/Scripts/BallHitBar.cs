@@ -8,6 +8,8 @@ public class BallHitBar : MonoBehaviour
     Vector3 currentVelocity;
     float ballSpeed;
     Vector3 newDirection;
+    public AudioSource au;
+    public AudioClip ac;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class BallHitBar : MonoBehaviour
         rb = collision.gameObject.GetComponent<Rigidbody>();
         if(collision.gameObject.name.IndexOf("Ball") != -1)
         {
+            
             //gameObject.GetComponent<Rigidbody>().AddForce(ballHit, 0f, 0f);
             currentVelocity = rb.linearVelocity;
             ballSpeed = 5f;

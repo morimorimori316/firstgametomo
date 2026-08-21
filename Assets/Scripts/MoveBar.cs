@@ -18,6 +18,8 @@ public class MoveBar : MonoBehaviour
     private float ballSpeed = 5f;
     GameObject[] addBall;
     private bool isEffectTime2 = false;
+    public AudioSource au;
+    public AudioClip ac;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,8 +29,9 @@ public class MoveBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log(rb);
         if (Input.GetKey(KeyCode.A))
         {
             rb.linearVelocity = new Vector3(speed*-1, 0, 0);
@@ -117,5 +120,16 @@ public class MoveBar : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         atackPoint--;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.name.IndexOf("Ball") != -1)
+        {
+            au = GetComponent<AudioSource>();
+            au.PlayOneShot(ac);
+        }
+
     }
 }
