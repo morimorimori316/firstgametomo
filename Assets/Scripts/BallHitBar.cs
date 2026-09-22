@@ -10,6 +10,7 @@ public class BallHitBar : MonoBehaviour
     Vector3 newDirection;
     public AudioSource au;
     public AudioClip ac;
+    public GameObject effect;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class BallHitBar : MonoBehaviour
             newDirection.y = 1f;
             newDirection.x += ballHit;
             rb.linearVelocity = newDirection.normalized*ballSpeed;
+            Instantiate(effect,collision.contacts[0].point, Quaternion.identity);
         }
         
     }

@@ -8,6 +8,7 @@ public class  BallHit : MonoBehaviour
     private int randomItem;
     public List<GameObject> items = new List<GameObject>();
     public int atackPoint = 0;
+    public  GameObject effect;
     //public AudioSource au;
     //public AudioClip ac;
     public GameObject audioBox;
@@ -74,6 +75,7 @@ public class  BallHit : MonoBehaviour
                     randomItem = Random.Range(0, items.Count);
                     Instantiate(items[randomItem], transform.position, Quaternion.identity);
                 }
+                Instantiate(effect,transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             
